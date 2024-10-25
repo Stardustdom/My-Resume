@@ -24,18 +24,22 @@ body {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     padding: 40px;
-    width: 100%;
-    min-height: 100vh;
+    width: 90%; /* Increased from 100% to create space around edges */
+    max-width: 1200px; /* Increased max-width */
+    min-height: 95vh; /* Slightly reduced from 100vh to create space */
     overflow-y: auto;
-    position: relative; /* Changed from fixed */
+    position: relative;
     z-index: 0;
+    border-radius: 20px; /* Added border radius */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
+    margin: 20px auto; /* Added margin */
 }
 
 /* Content wrapper */
 .content-wrapper {
-    max-width: 800px;
+    max-width: 900px; /* Increased from 800px */
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px 40px; /* Increased horizontal padding */
     height: 100%;
 }
 
@@ -129,13 +133,21 @@ a:hover {
         0 0 20px rgba(255, 192, 253, 0.3);
 }
 
+/* Enhanced responsive design */
 @media (max-width: 768px) {
+    .glass-container {
+        width: 95%;
+        padding: 20px;
+    }
+
     .content-wrapper {
         padding: 15px;
     }
+
     h1 {
         font-size: 2.5rem;
     }
+
     .profile-image {
         height: 180px;
         width: 180px;
@@ -143,12 +155,20 @@ a:hover {
 }
 
 @media (max-width: 480px) {
+    .glass-container {
+        width: 100%;
+        border-radius: 0;
+        margin: 0;
+    }
+
     .content-wrapper {
         padding: 10px;
     }
+
     h1 {
         font-size: 2rem;
     }
+
     .profile-image {
         height: 150px;
         width: 150px;
